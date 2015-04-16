@@ -7,6 +7,6 @@ This is an application to track my expenses.
 * Support for different currencies
 * Charts displaying totals for each category (Maybe a pie chart)
 * Charts to display variation on one or more expense categories over time
-* Calculate an estimate of next month expenses
+* Calculate an estimate next month expenses
 * Filter expenses by categories, date, etc
 
