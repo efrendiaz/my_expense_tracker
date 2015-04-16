@@ -1,0 +1,20 @@
+<h3>Create New Expense</h3>
+
+<%= form_for @expense, url: {action: "create"}, html: {class: "form-inline"} do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <div>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :currency %>
+    <%= f.select(:currency, options_for_select([['$COP', '$'], ['BsF', "Bs"]]),{} , {class: "form-control"}) %>
+  </div>
+
+<% end %>
+<hr>
+
+<button class="btn btn-success">
+  <span class="glyphicon glyphicon-save"></span> Save Changes
+</button>

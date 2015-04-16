@@ -8,7 +8,24 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+  <h1>Expense Tracker</h1>
+  <ul class="nav nav-pills">
+    <li role="presentation" ><a href="<%= expenses_path %>">Expenses</a></li>
+    <li role="presentation" ><a href="#">Categories</a></li>
+  </ul>
+  <%- if flash[:notice] -%>
+    <div class="alert alert-info" role="alert">
+      <%= flash[:notice].html_safe %>
+    </div>
+  <%- end -%>
+  <%- if flash[:alert] -%>
+    <div class="alert alert-danger" role="alert">
+      <%= flash[:alert].html_safe %>
+    </div>
+  <%- end -%>
+  <%= yield %>
+</div>
 
 </body>
 </html>

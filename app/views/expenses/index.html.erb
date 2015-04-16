@@ -1,0 +1,30 @@
+<h2>Expenses</h2>
+
+<table class="table table-striped expenses">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Frequency</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @expenses.each do |expense| -%>
+      <tr>
+        <td><%= expense.id %></td>
+        <td><%= expense.name %></td>
+        <td><%= expense.frequency %></td>
+        <td><%= number_to_currency(expense.amount, :unit => "$")  %></td>
+      </tr>
+    <%- end -%>
+  </tbody>
+</table>
+
+<%= will_paginate @expenses, renderer: BootstrapPagination::Rails %>
+
+<hr>
+<div class="btn-group">
+  <a href="<%= new_expense_path %>">Create New Expense</a>
+</div>
+<hr>
