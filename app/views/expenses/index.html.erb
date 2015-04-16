@@ -16,7 +16,7 @@
         <td><%= expense.id %></td>
         <td><%= expense.name %></td>
         <td><%= expense.frequency %></td>
-        <td><%= number_to_currency(expense.amount, :unit => expense.currency)  %></td>
+        <td><%= number_to_currency(expense.amount, :unit => expense.currency, :format =>"%u %n")  %></td>
         <td><a href="<%= edit_expense_path(expense) %>" role="button" class="btn btn-success btn-large">Edit</a> &nbsp;&nbsp;<%= link_to "Delete", expense, method: :delete,  data: { confirm: "Are you sure?" }, class: "btn btn-success btn-large", role:"button" %></td>
       </tr>
     <%- end -%>
