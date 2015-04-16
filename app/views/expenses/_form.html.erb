@@ -1,0 +1,7 @@
+<%= f.text_field :name %>
+<%= f.text_area :description %>
+<%= f.select :currency, [['$COP', '$'], ['BsF', "Bs"]], { class: "selectpicker" } %>
+<%= f.text_field :amount %>
+<%= f.select :frequency, [['Monthly', 'Monthly'], ['Bimonthly', "Bimonthly"]], { class: "selectpicker" } %>
+<%= f.text_field :due_date, "data-provide"=>'datepicker' %>
+<%= f.submit "Save" %>

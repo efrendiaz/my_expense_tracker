@@ -2,11 +2,5 @@
 <h3>Create New Expense</h3>
 
 <%= bootstrap_form_for(@expense,layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-3") do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_area :description %>
-  <%= f.select :currency, [['$COP', '$'], ['BsF', "Bs"]], { class: "selectpicker" } %>
-  <%= f.text_field :amount %>
-  <%= f.select :frequency, [['Monthly', 'Monthly'], ['Bimonthly', "Bimonthly"]], { class: "selectpicker" } %>
-  <%= f.text_field :due_date, "data-provide"=>'datepicker' %>
-  <%= f.submit "Save" %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
 <% end %>

@@ -1,5 +1,5 @@
 require "rails_helper"
-describe "expenses index", type: :feature do
+describe "expenses list", type: :feature do
   describe "see previous expenses" do
     let!(:expense_1) { FactoryGirl.create(:expense) }
     let!(:expense_2) { FactoryGirl.create(:expense) }
@@ -40,5 +40,28 @@ describe "expenses new", type: :feature do
     end
   end
 end
+
+describe "expenses edit", type: :feature do
+  let!(:expense_1) { FactoryGirl.create(:expense) }
+  describe "update anexpense" do
+    it "successfully updates an expense " do
+      visit "/expenses/#{expense_1.id}/edit"
+      expect(page).to have_content("Edit Expense")
+      fill_in 'Name', with: 'My test'
+      click_button 'Save'
+      expect(page).to have_content("Expense was successfully updated.")
+      expect(page).to have_content("My test")
+    end
+
+    it "displays errors if required fields are not present" do
+      visit "/expenses/#{expense_1.id}/edit"
+      fill_in 'Amount', with: ""
+      click_button 'Save'
+      expect(page).to have_content("can't be blank")
+    end
+  end
+end
+
+
 
 

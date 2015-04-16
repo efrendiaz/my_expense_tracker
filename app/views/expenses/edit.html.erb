@@ -1,0 +1,6 @@
+
+<h3>Edit Expense</h3>
+
+<%= bootstrap_form_for(@expense,layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-3" ,method: :put) do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
