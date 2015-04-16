@@ -25,6 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "bootstrap-sass", "~> 3.2.0"
 gem 'will_paginate-bootstrap'
+gem 'bootstrap_form'
+gem 'bootstrap-datepicker-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -37,6 +40,7 @@ gem 'will_paginate-bootstrap'
 group :development, :test do
   gem "spring"
   gem "rspec-rails"
+  gem 'shoulda-matchers', require: false
   gem "factory_girl_rails"
   gem "capybara"
   gem "database_cleaner", git: "git@github.com:bmabey/database_cleaner.git"
