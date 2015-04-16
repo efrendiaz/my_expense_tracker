@@ -1,5 +1,3 @@
-== README
-
 This is an application to track my expenses.
 
 ### Specs ###
