@@ -23,6 +23,7 @@ describe "expenses new", type: :feature do
       expect(page).to have_content("Create New Expense")
       fill_in 'Name', with: 'My test'
       fill_in 'Amount', with: 100000
+      fill_in 'Payment date', with: Time.now.to_date
       select "BsF", :from => "expense_currency"
       select "Bimonthly", :from => "expense_frequency"
       click_button 'Save'
