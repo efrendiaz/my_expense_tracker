@@ -3,5 +3,5 @@
 <%= f.select :currency, [['$COP', '$'], ['BsF', "Bs"]], { class: "selectpicker" } %>
 <%= f.text_field :amount %>
 <%= f.select :frequency, [['Monthly', 'Monthly'], ['Bimonthly', "Bimonthly"]], { class: "selectpicker" } %>
-<%= f.text_field :due_date, "data-provide"=>'datepicker' %>
+<%= f.text_field :payment_date, "data-provide"=>'datepicker' %>
 <%= f.submit "Save" %>
