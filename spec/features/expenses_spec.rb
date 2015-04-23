@@ -36,6 +36,7 @@ describe "expenses new", type: :feature do
       fill_in 'Amount', with: 100000
       select "BsF", :from => "expense_currency"
       select "Bimonthly", :from => "expense_frequency"
+      fill_in 'Payment date', with: Time.now.to_date
       click_button 'Save'
       expect(page).to have_content("can't be blank")
     end
